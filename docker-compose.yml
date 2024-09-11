@@ -1,18 +1,16 @@
-version: '3'
-
 services:
   wordpress:
     build: .
     ports:
-      - "31337:80"
+      - "31336:80"
     environment:
-      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_PASSWORD: lego_mysql203
     volumes:
       - "wp:/var/www/html:rw"
   mysql:
     image: "mysql:5.7"
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: lego_mysql203
     volumes:
       - db:/var/lib/mysql
   phpmyadmin:
